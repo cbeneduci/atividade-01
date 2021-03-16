@@ -1,1 +1,1 @@
-# atividade-01
+# incluir arquivo credentials.json com as informações do google para iniciar o código.

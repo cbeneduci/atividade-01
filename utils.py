@@ -1,4 +1,22 @@
 import logging
+import pandas as pd
+
+
+def sendFiletoDF(file):
+    file.seek(0)
+    
+    file_df = pd.read_json(file, orient='index', typ='series')
+    file_df = pd.DataFrame.from_dict(file_df['_default'], orient='index')
+
+    return file_df
+
+    # teste = pd.read_json('acervo_1556_1899.json',
+    #     orient='index',
+    #     typ='series'
+    #     )
+
+
+
 
 def setLogs(logname, loglevel = logging.INFO):
     from logging.handlers import TimedRotatingFileHandler
